@@ -1,0 +1,173 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write your own custom component styles here */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Generics */
+
+body {
+}
+
+input {
+  color: black;
+  border-radius: 5px;
+}
+
+/* Custom Classes */
+
+.marker-active {
+  z-index: 1;
+}
+
+
+
+
+.customButton {
+  border: none;
+  padding: 0.3rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(53, 201, 157);
+  color: white;
+  font-weight: 900;
+}
+
+
+.iconsRecording{
+
+  @apply w-6 h-6 mx-2 text-green-700
+}
+
+
+
+
+.todolist-container {
+  background-color: white;
+  margin-top: 2rem;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.329);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.todos-container {
+  overflow: auto;
+  height: 90%;
+}
+
+.header {
+  color: white;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  font-size: 5rem;
+  text-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.342);
+}
+
+
+
+.todo-item {
+  border-bottom: .05rem solid rgba(0, 0, 0, 0.082);
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.todo-item-active {
+  text-decoration: line-through;
+  color: grey
+}
+
+
+.slick-track {
+  background: blue !important;
+  width: 100%;
+  height: 100%;
+
+
+}
+
+.slick-slider {
+  width: 100%;
+  height: 100%;
+  background: green;
+
+
+}
+
+
+
+
+.header {
+  color: white;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  font-size: 5rem;
+  text-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.342);
+}
+
+
+
+
+
+
+
+
+
+.followerslist-container {
+  background-color: white;
+  margin-top: 2rem;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.329);
+  height: 50vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.follower-item {
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: .05rem solid rgba(0, 0, 0, 0.082);
+  padding: 1rem 0;
+}
+.followers-details {
+  margin-left: 1.25rem;
+}
+
+.follower-item-name {
+  display: flex;
+}
+
+.follower-item-name h4 {
+  margin-right: 0.5rem;
+}
+
+.follower-item img {
+  border-radius: 50%;
+  width: 4rem
+}
+
+
+.banner {
+  height: 35vh;
+  background-image:  linear-gradient(to right, rgba(54, 214, 62, 0.794), rgba(53, 201, 157, 0.794), rgba(32, 155, 212, 0.794)),url("/mountain.jpg");
+  background-position: center;
+}
+
+.banner-img {
+  height: 100%;
+  width: 100%;
+}
