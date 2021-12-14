@@ -1,6 +1,9 @@
 import axios from "axios";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { Ar } from "src/locales/ar";
+import { En } from "src/locales/en";
 
 
 
@@ -9,8 +12,12 @@ interface IFollowers{
 }
 
 function FollowersListComponent({followers}:IFollowers) {
-console.log("2");
 
+
+    const router = useRouter()
+
+    const { locale, locales, defaultLocale } = router
+    const  t= locale==="en"? En :Ar
     return (
 
         <div className="followerslist-container">
@@ -29,7 +36,7 @@ console.log("2");
                 ))}
             </div>
             <div className="todo-footer">
-                <Link href="/" >Go Back</Link>
+                <Link href="/" locale={locale} >{t["go back"]}</Link>
             </div>
         </div>
     );
@@ -41,7 +48,6 @@ export default FollowersListComponent;
 
 
 export const getServerSideProps: GetServerSideProps<any> = async (ctx:GetServerSidePropsContext) => {
-    console.log("enter  the  get side");
     
     try {
     if(ctx.req.method="GET"){

@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import "./AddInput.module.css"
 import { v4 } from "uuid"
 import TodoList from '../TodoList/TodoList'
+import { useRouter } from 'next/router'
+import { En } from 'src/locales/en'
+import { Ar } from 'src/locales/ar'
 
 
 export interface  ITodo{
@@ -21,6 +24,12 @@ export interface IAddInput{
 function AddInput({
     setTodos, todos
 }:IAddInput) {
+
+        
+    const router = useRouter()
+
+    const { locale, locales, defaultLocale } = router
+    const  t= locale==="en"? En :Ar
 
     const [todo, setTodo] = useState<string>("")
 
@@ -44,13 +53,13 @@ function AddInput({
                 className="border-none w-[90%] focus:outline-none" 
                 value={todo} 
                 onChange={(e) => setTodo(e.target.value)}
-                placeholder="Add a new task here..."
+                placeholder={t.placeholder}
             />
             <button 
                 className="customButton"
                 onClick={addTodo}
             >
-                Add
+                {t.addButton}
             </button>
         </div>
     )

@@ -5,7 +5,10 @@ module.exports = {
     ignoreBuildErrors: true,
   },
 
-
+  i18n: {
+    locales: ['en', 'ar'],
+    defaultLocale: 'en',
+  },
 
 //  add  webpak  congigration 
 webpack(config) {
@@ -53,6 +56,9 @@ webpack(config) {
         API_ENDPOINT: process.env.API_ENDPOINT || 'https://randomuser.me/api/',
 
     },
+
+
+
     
     publicRuntimeConfig: {
     },

@@ -21,6 +21,8 @@ export interface Ifollowers{
 
 
  const followers:NextPage<Ifollowers> = (props) => {
+     console.log("props",props);
+     
      
     return (
         <FollowersList followers={props.followers}/>
@@ -40,14 +42,16 @@ export async function getServerSideProps(context:GetServerSidePropsContext) {
 
           return {
             props: {
-                followers: (data.results)  as  Array<Ifollower>
+                followers: (data.results)  as  Array<Ifollower>,
+                
             }
         }
         
     }else{
         return {
             props: {
-                followers: []
+                followers: [],
+                context
             }
         }
     }
